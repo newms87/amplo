@@ -7,10 +7,10 @@
 * [Vagrant](https://www.vagrantup.com/downloads.html)
 
 ##Setup
-1. Install all the [Requirements](#markdown-header-requirements)
+1. Install all the [Requirements](#requirements)
 2. Clone the Git repo to your website directory (any directory really)
 3. from the amplo root directory, run `vagrant up`
-    * If you run into problems initializing the virtual server see the [Troubleshooting](#markdown-header-troubleshooting) section.
+    * If you run into problems initializing the virtual server see the [Troubleshooting](#troubleshooting) section.
     
 ##Troubleshooting
 
