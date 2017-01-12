@@ -49,9 +49,9 @@ class AppThisController extends Controller
 
 	public function runAlgorithm()
 	{
-		$digits = (array)@explode(',', $_GET['digits']);
+		$digits = (array)@explode(',', preg_replace("/[\\s]/", '', $_GET['digits']));
 		$teams = (int)@$_GET['teams'];
 
-		return (new Appthis)->algorithm($digits, $teams);
+		return (new Appthis)->algorithmOptimized($digits, $teams);
 	}
 }
