@@ -64,11 +64,11 @@
             </section>
 
             <section id="page-sub-header" class="row page-sub-header">
-                <div class="gen-impressions col xs-12 md-6 xl-4">
+                <div class="gen-impressions col xs-12 md-4 xl-4 text-left">
                     <input class="border-info" v-model="numImpressions" placeholder="# of Impressions"/>
                     <button class="btn-sm bg-info color-default border-info" @click="generateImpressions()">@{{genBtnText}}</button>
                 </div>
-                <div class="algorithm col xs-12 md-6 xl-4">
+                <div class="algorithm col xs-12 md-8 xl-8 text-right">
                     <input class="border-info" v-model="digits" placeholder="',' separated digits"/>
                     <input class="border-info" v-model="numTeams" placeholder="# of numbers"/>
                     <button class="btn-sm bg-info color-default border-info" @click="runAlgorithm()">@{{algBtnText}}</button>
