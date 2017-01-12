@@ -23,16 +23,21 @@
 	Vue.component('grid', {
 		template: '#grid-template',
 		props:    {
-			data:    Array,
-			columns: Array
+			data:      Array,
+			columns:   Array,
+			sortby:    String,
+			sortorder: Number
 		},
 		data:     function() {
 			var sortOrders = {}
 			this.columns.forEach(function(col) {
 				sortOrders[col.name] = 1
 			})
+
+			sortOrders[this.sortby] = this.sortorder;
+
 			return {
-				sortKey:    '',
+				sortKey:    this.sortby,
 				sortOrders: sortOrders
 			}
 		},

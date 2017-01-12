@@ -12,7 +12,7 @@
         </div>
 
         <div class="report-body">
-            <grid :data="gridData" :columns="gridColumns"></grid>
+            <grid :data="gridData" :columns="gridColumns" :sortby="'date'" :sortorder="1"></grid>
         </div>
 
         <div class="report-footer row text-left">

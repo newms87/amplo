@@ -11,7 +11,7 @@
             </div>
         </div>
         <div class="report-body">
-            <grid :data="gridData" :columns="gridColumns"></grid>
+            <grid :data="gridData" :columns="gridColumns" :sortby="'impressions'" :sortorder="-1"></grid>
         </div>
     </div>
 </div>
