@@ -1,0 +1,34 @@
+@mixin set-color($label, $color) {
+	//inside body for precedence
+	body {
+		.color-#{$label} {
+			color: $color;
+		}
+
+		.bg-#{$label} {
+			background-color: $color;
+		}
+
+		.border-#{$label} {
+			border-color: $color;
+		}
+	}
+}
+
+@include set-color('default', $color-default);
+@include set-color('default-alt', $color-default-alt);
+
+@include set-color('primary', $color-primary);
+@include set-color('primary-alt', $color-primary-alt);
+
+@include set-color('success', $color-success);
+@include set-color('success-alt', $color-success-alt);
+
+@include set-color('info', $color-info);
+@include set-color('info-alt', $color-info-alt);
+
+@include set-color('warning', $color-warning);
+@include set-color('warning-alt', $color-warning-alt);
+
+@include set-color('error', $color-error);
+@include set-color('error-alt', $color-error-alt);

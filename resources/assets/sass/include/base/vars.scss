@@ -1,0 +1,115 @@
+/* Vars */
+//Sizing
+$font-size-base: 1.3em !default;
+$font-size-lg: 1.6em !default;
+$font-size-sm: 1.1em !default;
+$font-size-xs: 1em !default;
+
+$line-height-base: 1.4em !default;
+$line-height-lg: 1.9em !default;
+$line-height-sm: 1.1em !default;
+$line-height-xs: .8em !default;
+
+$xs: 480px !default;
+$sm: 768px !default;
+$md: 1024px !default;
+$lg: 1280px !default;
+$xl: 1920px !default;
+$num-cols: 12 !default;
+
+//Page
+$wrap-padding: 1em 2em;
+$page-width-min: 320px !default;
+
+//Padding
+$padding-base-horizontal: 1.2em !default;
+$padding-base-vertical: .6em !default;
+$padding-lg-horizontal: 1.5em !default;
+$padding-lg-vertical: 1em !default;
+$padding-sm-horizontal: 1em !default;
+$padding-sm-vertical: .5em !default;
+$padding-xs-horizontal: .8em !default;
+$padding-xs-vertical: .4em !default;
+
+//Forms
+$input-padding-vertical: .5em;
+$input-padding-horizontal: 1em;
+$input-font-size: 1em;
+$input-line-height: 1.4em;
+$input-border-radius: 3px;
+$input-border-radius-lg: 5px;
+$input-border-radius-sm: 3px;
+$input-border-radius-xs: 3px;
+$input-border: 1px solid transparent;
+
+//Messages
+$message-border: 2px solid transparent;
+$color-message-bg: #767373;
+$color-message: white;
+$message-border-radius: 5px;
+
+//Components
+$btn-border-radius-base: 5px !default;
+$btn-border-radius-lg: 8px !default;
+$btn-border-radius-sm: 3px !default;
+$btn-border-radius-xs: 2px !default;
+
+$btn-font-weight: normal !default;
+$cursor-disabled: not-allowed !default;
+
+//Navigation
+$nav-width: 30em;
+$nav-transition: .3s ease-out;
+
+//Colors
+$color-default: white;
+$color-default-alt: black;
+$color-primary: #455887;
+$color-primary-alt: #DBEAF1;
+$color-info: #5680BF;
+$color-info-alt: lighten($color-info, 50%);
+$color-warning: #FDC878;
+$color-warning-alt: lighten($color-warning, 50%);
+$color-error: #A32F30 !default;
+$color-error-alt: #EBA0A1 !default;
+$color-success: #74A98B !default;
+$color-success-alt: #E4F3EB !default;
+
+$color-page-bg: #DFDFDF !default;
+$color-header: white !default;
+$color-header-bg: #455887 !default;
+$color-footer: white;
+$color-footer-bg: #767373;
+
+$color-nav-icon: white;
+$color-nav: white;
+$color-nav-bg: #767373;
+$color-nav-link: #C5E0ED;
+$color-nav-link-active: #FDC878;
+
+$color-report-header: #455887 !default;
+$color-report-bg: white !default;
+
+$color-table-head: #767373 !default;
+$color-table-foot: #5680BF !default;
+$color-table-foot-bg: #C5E0ED !default;
+$color-table-body: black !default;
+$color-table-sorting: #5680BF !default;
+$color-table-sorting-bg: #DBEAF1 !default;
+
+$color-btn: white !default;
+$color-btn-bg: #5680BF !default;
+$color-btn-hover: #DBEAF1 !default;
+$color-action-bg: #C5E0ED !default;
+$color-expand: #5680BF !default;
+$color-expand-bg: #C7DEFF !default;
+$color-label-bg: #5680BF !default;
+
+$color-input-border: #ADACAC;
+$color-input-bg: white;
+$color-input: #4A4848;
+
+$color-input-group-border: #5680BF !default;
+$color-addon-bg: $color-success-alt;
+$color-addon-border: #767373;
+

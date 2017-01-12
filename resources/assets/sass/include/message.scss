@@ -1,0 +1,16 @@
+.message {
+	padding: .5em 1em;
+	margin: 1em 0;
+	border: $message-border;
+	background: $color-message-bg;
+	color: $color-message;
+	border-color: $color-message;
+	border-radius: $message-border-radius;
+	text-align: left;
+
+	&.is-error {
+		border-color: $color-error;
+		color: $color-error;
+		background: $color-error-alt;
+	}
+}

@@ -1,0 +1,200 @@
+@import 'base';
+@import 'colors';
+@import 'animate';
+@import 'fa-animations';
+@import 'nav';
+@import 'btn';
+@import 'form';
+@import 'targeting';
+@import 'message';
+
+$color-push-text: #636E7B;
+
+body {
+	font-family: "Open Sans", sans-serif;
+}
+
+/* Header */
+.page-header {
+	background: $color-header-bg;
+	color: $color-header;
+	height: 5em;
+
+	.wrap {
+		padding: 0;
+		height: 100%;
+
+		& > .col {
+			height: 100%;
+		}
+
+		.header-title {
+			padding: 1.5em;
+
+			h1 {
+				line-height: 1.1em;
+			}
+		}
+
+		.header-btn {
+			display: inline-block;
+			padding: 1.5em;
+			color: white;
+
+			.fa {
+				color: white;
+				font-size: 2em;
+			}
+
+			&:hover, &:active {
+				background: lighten($color-header-bg, 20%);
+			}
+		}
+	}
+}
+
+.page-body {
+	min-height: 80vh;
+	background: $color-page-bg;
+}
+
+a {
+	color: $color-nav-link;
+	cursor: pointer;
+
+	&:hover {
+		color: $color-nav-link-active;
+	}
+}
+
+#primary-nav {
+	padding: 1.5em 0;
+}
+
+h1 {
+	font-size: 2em;
+}
+
+h2 {
+	font-size: 1.6em;
+}
+
+h3 {
+	font-size: 1.3em;
+}
+
+h4 {
+	font-size: 1.1em;
+}
+
+h5 {
+	font-size: 1em;
+}
+
+h6 {
+	font-size: .9em;
+}
+
+/* Footer */
+.page-footer {
+	background: $color-footer-bg;
+	color: $color-footer;
+}
+
+/* daterangepicker styling port */
+.dropdown-menu {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	z-index: 1000;
+	display: none;
+	float: left;
+	min-width: 160px;
+	padding: 5px 0;
+	margin: 2px 0 0;
+	font-size: 14px;
+	text-align: left;
+	list-style: none;
+	background-color: #fff;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+	border: 1px solid #ccc;
+	border: 1px solid rgba(0, 0, 0, .15);
+	border-radius: 4px;
+	-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+	box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+}
+
+.daterangepicker select {
+	padding: .2em 0;
+}
+
+/* scReport tables */
+.table-box {
+	table {
+		width: 100%;
+
+		thead {
+			border-bottom: 1px solid $color-table-head;
+
+			th {
+				color: $color-table-head;
+				padding: .5em;
+
+				&.is-sortable {
+					cursor: pointer;
+					@extend .no-select;
+
+					.fa {
+						opacity: 0;
+						margin-left: .5em;
+						font-size: .8em;
+					}
+
+					&:hover {
+						background: $color-table-sorting-bg;
+
+						.fa {
+							opacity: 1;
+						}
+					}
+				}
+
+				&.is-sorting {
+					color: $color-table-sorting;
+
+					.fa {
+						opacity: 1;
+					}
+				}
+			}
+		}
+
+		tbody {
+			td {
+				padding: .5em;
+				color: $color-table-body;
+			}
+		}
+
+		tfoot {
+			background: $color-table-foot-bg;
+
+			td {
+				color: $color-table-foot;
+				font-weight: bold;
+				padding: .5em;
+			}
+		}
+	}
+}
+
+.col {
+	.input-group {
+		padding: 1em;
+
+		a {
+			color: $color-input;
+		}
+	}
+}

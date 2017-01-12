@@ -1,0 +1,79 @@
+@import 'include/admin-theme';
+@import 'include/pickaday';
+
+$arrow-size: 6px;
+
+.page-sub-header {
+  padding: .5em;
+}
+
+.report-list {
+  .report {
+    background: white;
+    border-radius: 5px;
+    margin: 1em;
+    padding: 1em;
+
+    .report-header {
+      margin-bottom: .5em;
+    }
+
+    &.chart {
+      .report-header {
+        margin-bottom: 2em;
+      }
+    }
+  }
+}
+
+table.table-grid {
+  border: 2px solid #42b983;
+  border-radius: 3px;
+  background-color: #fff;
+  width: 100%;
+
+  th {
+    background-color: #42b983;
+    color: white;
+    cursor: pointer;
+    text-align: right;
+    opacity: .7;
+    @include user-select(none);
+
+    &:hover {
+      opacity: .9;
+    }
+
+    &.is-sorting {
+      opacity: 1;
+    }
+  }
+
+  td {
+    background-color: #f9f9f9;
+    text-align: right;
+  }
+
+  th, td {
+    min-width: 120px;
+    padding: 10px 20px;
+  }
+
+  .arrow {
+    display: inline-block;
+    vertical-align: middle;
+    width: 0;
+    height: 0;
+    margin-left: 5px;
+    border-left: $arrow-size solid transparent;
+    border-right: $arrow-size solid transparent;
+
+    &.asc {
+      border-bottom: $arrow-size solid #fff;
+    }
+
+    &.dsc {
+      border-top: $arrow-size solid #fff;
+    }
+  }
+}

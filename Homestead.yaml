@@ -6,13 +6,13 @@ hostname: amplo
 name: amplo
 provider: virtualbox
 
-authorize: C:/Users/newms/.ssh/id_rsa.pub
+authorize: ~/.ssh/id_rsa.pub
 
 keys:
-    - C:/Users/newms/.ssh/id_rsa
+    - ~/.ssh/id_rsa
 
 folders:
-    - map: "C:/Users/newms/Websites/amplo"
+    - map: "~/Websites/amplo"
       to: "/home/vagrant/amplo"
 
 sites:

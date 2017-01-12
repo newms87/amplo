@@ -1,0 +1,133 @@
+//
+// Input groups
+// --------------------------------------------------
+
+// Base styles
+// -------------------------
+.input-group {
+	position: relative;
+	display: table;
+	border-collapse: separate;
+	width: 100%;
+	box-sizing: border-box;
+	font-size: $font-size-base;
+
+	.form-control, .btn, .addon {
+		display: table-cell;
+		white-space: nowrap;
+		vertical-align: middle;
+		//reset font size as this is controlled w/ .input-group-{lg,sm,xs}
+		font-size: 1em;
+
+		&:not(:first-child):not(:last-child) {
+			border-radius: 0;
+		}
+
+		&:not(:first-child) {
+			border-left-width: 0;
+		}
+
+		&:first-child {
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;
+		}
+
+		&:last-child {
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+		}
+	}
+
+	.form-control {
+		width: 100%;
+		margin: 0;
+
+		&:focus {
+			z-index: 3;
+		}
+
+		&.radio, &.checkbox, select {
+			border: 1px solid $color-input-border;
+			border-radius: $input-border-radius;
+			border-left-width: 0;
+			border-right-width: 0;
+
+			&:first-child {
+				border-left-width: 1px;
+			}
+
+			&:last-child {
+				border-right-width: 1px;
+			}
+
+			.label {
+				background: $color-input-bg;
+				color: $color-input;
+				padding: .5em 1em;
+			}
+
+			input:checked {
+				& + .label {
+					background: $color-success;
+					color: white;
+				}
+			}
+		}
+	}
+}
+
+.addon {
+	padding: $padding-base-vertical $padding-base-horizontal;
+	font-weight: normal;
+	line-height: 1;
+	width: 1%;
+	color: $color-input;
+	text-align: center;
+	background-color: $color-addon-bg;
+	border: 1px solid $color-addon-border;
+	border-radius: $input-border-radius;
+
+	// Nuke default margins from checkboxes and radios to vertically center within.
+	input[type="radio"],
+	input[type="checkbox"] {
+		margin-top: 0;
+	}
+}
+
+// Sizing options
+.input-group-lg {
+	font-size: $font-size-lg;
+
+	& > .form-control, & > .addon, & > .btn {
+		border-radius: $input-border-radius-lg;
+		padding: $padding-lg-vertical $padding-lg-horizontal;
+	}
+}
+
+.input-group-sm {
+	font-size: $font-size-sm;
+
+	& > .form-control, & > .addon, & > .btn {
+		border-radius: $input-border-radius-xs;
+		padding: $padding-sm-vertical $padding-sm-horizontal;
+	}
+}
+
+.input-group-xs {
+	font-size: $font-size-xs;
+
+	& > .form-control, & > .addon, & > .btn {
+		border-radius: $input-border-radius-xs;
+		padding: $padding-xs-vertical $padding-xs-horizontal;
+	}
+}
+
+//Errors
+.input-group {
+	&.has-error {
+		.addon, .btn, .form-control {
+			background: $color-error-alt;
+			color: $color-error;
+		}
+	}
+}

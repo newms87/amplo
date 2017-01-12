@@ -1,0 +1,118 @@
+nav, .nav {
+	position: relative;
+	box-sizing: border-box;
+
+	.nav-group {
+		.nav-title {
+			padding: .2em .5em;
+		}
+	}
+
+	ul {
+		width: 100%;
+		li {
+			width: 100%;
+
+			a {
+				display: inline-block;
+				padding: .5em 2em;
+				text-decoration: none;
+				width: 100%;
+				color: $color-nav-link;
+				cursor: pointer;
+
+				.fa {
+					margin-right: .5em;
+				}
+
+				&:hover {
+					background: $color-nav-link;
+					color: $color-nav-bg;
+				}
+			}
+
+			& > .sub-nav {
+				display: block;
+				height: 0;
+				overflow: hidden;
+				//transition: $nav-transition;
+
+				& > li {
+					a {
+						padding-left: 3.5em;
+					}
+				}
+			}
+
+			&.child-active {
+				& > .sub-nav {
+					height: auto;
+				}
+			}
+
+			&.is-active {
+				& > a {
+					color: $color-nav-link-active;
+
+					&:hover {
+						background: none;
+						color: $color-nav-link-active;
+					}
+				}
+
+				& > .sub-nav {
+					height: auto;
+				}
+			}
+		}
+	}
+
+	&.nav-slide-inline {
+		position: fixed;
+		top: 0;
+		height: 100vh;
+		width: $nav-width;
+		max-width: 70vw;
+		background: $color-nav-bg;
+		color: $color-nav;
+		transition: transform $nav-transition;
+		z-index: 20;
+
+		&.slide-right {
+			right: 0;
+			transform: translate3d($nav-width, 0, 0);
+		}
+
+		&.slide-left {
+			left: 0;
+			transform: translate3d(-$nav-width, 0, 0);
+		}
+
+		&.is-active {
+			&.slide-left, &.slide-right {
+				transform: translate3d(0, 0, 0);
+			}
+		}
+	}
+
+	&.is-active {
+		& ~ .page-content {
+			overflow: hidden !important;
+		}
+	}
+}
+
+.nav-content {
+  transition: $nav-transition;
+}
+
+.nav-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: transparent;
+	z-index: 19;
+}
+

@@ -1,0 +1,51 @@
+/* Methods */
+//Background Images
+@mixin bg-image-set($s1, $s2, $s3) {
+	background-image: url($s1);
+	background-image: -webkit-image-set(url($s1) 1x, url($s2) 2x, url($s3) 3x);
+	background-image: -moz-image-set(url($s1) 1x, url($s2) 2x, url($s3) 3x);
+	background-image: -ms-image-set(url($s1) 1x, url($s2) 2x, url($s3) 3x);
+	background-image: -o-image-set(url($s1) 1x, url($s2) 2x, url($s3) 3x);
+}
+
+//Fonts
+@mixin import-font($import-font-family, $font-file-name, $font-style: 'normal', $font-weight: 'normal') {
+	@theme-font-file : #{$font-path}#{$font-file-name};
+	@font-face {
+		font-family: $import-font-family;
+		src: url('#{$theme-font-file}.eot');
+		src: url('#{$theme-font-file}.eot?#iefix') format('embedded-opentype'),
+		url('#{$theme-font-file}.woff2') format('woff2'),
+		url('#{$theme-font-file}.woff') format('woff'),
+		url('#{$theme-font-file}.ttf') format('truetype'),
+		url('#{$theme-font-file}.svg##{$import-font-family}') format('svg');
+		font-style: $font-style;
+		font-weight: $font-weight;
+	}
+}
+
+// Button sizes
+@mixin button-size($padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
+	padding: $padding-vertical $padding-horizontal;
+	font-size: $font-size;
+	line-height: $line-height;
+	border-radius: $border-radius;
+}
+
+//Border Radius
+@mixin border-top-radius($radius) {
+	border-top-right-radius: $radius;
+	border-top-left-radius: $radius;
+}
+@mixin border-right-radius($radius) {
+	border-bottom-right-radius: $radius;
+	border-top-right-radius: $radius;
+}
+@mixin border-bottom-radius($radius) {
+	border-bottom-right-radius: $radius;
+	border-bottom-left-radius: $radius;
+}
+@mixin border-left-radius($radius) {
+	border-bottom-left-radius: $radius;
+	border-top-left-radius: $radius;
+}

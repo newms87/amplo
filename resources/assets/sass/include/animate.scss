@@ -1,0 +1,91 @@
+$nav-icon-width: 32px !default;
+$nav-icon-height: 24px !default;
+$nav-bar-width: 5px !default;
+
+/* Font Awesome @extend classes */
+.fa-spin {
+	-webkit-animation: fa-spin 2s infinite linear;
+	animation: fa-spin 2s infinite linear;
+}
+
+.nav-icon {
+	position: relative;
+	display: inline-block;
+	width: $nav-icon-width;
+	height: $nav-icon-height;
+	margin: 0;
+	transform: rotate(0deg);
+	transition: .5s ease-in-out;
+	cursor: pointer;
+
+	span {
+		display: block;
+		position: absolute;
+		height: $nav-bar-width;
+		width: 100%;
+		left: 0;
+		background: $color-nav-icon;
+		opacity: 1;
+		transform: rotate(0deg);
+		transition: .25s ease-in-out;
+		border-radius: $nav-bar-width;
+
+		&:nth-child(1) {
+			top: 0px;
+		}
+
+		&:nth-child(2), &:nth-child(3) {
+			top: $nav-bar-width * 2;
+		}
+
+		&:nth-child(4) {
+			top: $nav-bar-width * 4;
+		}
+	}
+}
+
+.navbar-toggle.is-active {
+	.nav-icon {
+		span:nth-child(1) {
+			top: $nav-bar-width * 2;
+			width: 0%;
+			left: 50%;
+		}
+
+		span:nth-child(2) {
+			transform: rotate(45deg)
+		}
+
+		span:nth-child(3) {
+			transform: rotate(-45deg)
+		}
+
+		span:nth-child(4) {
+			top: $nav-bar-width * 2;
+			width: 0%;
+			left: 50%;
+		}
+	}
+}
+
+/* Animations */
+@keyframes fadingColors {
+	0% {
+		background: rgba(0, 0, 0, .1);
+	}
+	50% {
+		background: rgba(0, 0, 0, .6);
+	}
+	100% {
+		background: rgba(0, 0, 0, .1);
+	}
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
