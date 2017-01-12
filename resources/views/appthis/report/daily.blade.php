@@ -18,18 +18,18 @@
         <div class="report-footer row text-left">
             <div class="col xs-12 md-4 filter-date-range">
                 <div class="input-group input-group-xs">
-                    <label for="filter-date-range" class="addon bg-info color-default border-info">
+                    <label for="daily-filter-date-range" class="addon bg-info color-default border-info">
                         <i class="fa fa-calendar"></i> Start
                     </label>
-                    <input id="filter-date-start" name="date_start" v-model="dateStart" class="form-control date-range-picker border-info"/>
+                    <input id="daily-filter-date-start" name="date_start" v-model="dateStart" class="form-control date-range-picker border-info"/>
                 </div>
             </div>
             <div class="col xs-12 md-4 filter-date-range text-left">
                 <div class="input-group input-group-xs">
-                    <label for="filter-date-range" class="addon bg-info color-default border-info">
+                    <label for="daily-filter-date-range" class="addon bg-info color-default border-info">
                         <i class="fa fa-calendar"></i> End
                     </label>
-                    <input id="filter-date-end" name="date_end" v-model="dateEnd" class="form-control date-range-picker border-info"/>
+                    <input id="daily-filter-date-end" name="date_end" v-model="dateEnd" class="form-control date-range-picker border-info"/>
                 </div>
             </div>
         </div>
@@ -89,16 +89,16 @@
 			 mounted: function() {
 				 var $this = this;
 
-				 var startDate = new Pikaday({
-					 field:    document.getElementById('filter-date-start'),
+				 new Pikaday({
+					 field:    document.getElementById('daily-filter-date-start'),
 					 showTime: false,
 					 onSelect: function() {
 						 $this.dateStart = this.getMoment().format('Y-M-D');
 					 }
 				 });
 
-				 var endDate = new Pikaday({
-					 field:    document.getElementById('filter-date-end'),
+				 new Pikaday({
+					 field:    document.getElementById('daily-filter-date-end'),
 					 showTime: false,
 					 onSelect: function() {
 						 $this.dateEnd = this.getMoment().format('Y-M-D')
