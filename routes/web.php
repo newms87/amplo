@@ -22,3 +22,4 @@ Route::get('/appthis/conversion/performance', 'AppThisController@getPerformanceD
 Route::get('/appthis/conversion/get-countries', 'AppThisController@getCountries');
 Route::get('/appthis/publisher/get', 'AppThisController@getPublishers');
 Route::get('/appthis/generate-impressions', 'AppThisController@generateImpressions');
+Route::get('/appthis/algorithm', 'AppThisController@runAlgorithm');

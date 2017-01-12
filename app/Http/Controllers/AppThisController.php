@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Publisher;
 use App\Models\Conversion;
+use App\Library\Appthis;
 
 class AppThisController extends Controller
 {
@@ -44,5 +45,13 @@ class AppThisController extends Controller
 		factory(\App\Models\Conversion::class, (int)$impressions)->create();
 
 		return ['success' => "Generated $impressions impressions"];
+	}
+
+	public function runAlgorithm()
+	{
+		$digits = (array)@explode(',', $_GET['digits']);
+		$teams = (int)@$_GET['teams'];
+
+		return (new Appthis)->algorithm($digits, $teams);
 	}
 }

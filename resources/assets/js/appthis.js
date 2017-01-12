@@ -2,20 +2,49 @@ var appthis = new Vue({
 	el:      '#page-sub-header',
 	data:    {
 		numImpressions: '',
-		btnText:        'Generate',
+		digits:         '',
+		genBtnText:     'Generate',
+		algBtnText:     'Run Algorithm',
+		numTeams:       '',
 		isLoading:      false
 	},
 	methods: {
 		generateImpressions: function() {
 			if (this.numImpressions) {
-				this.btnText = 'Generating...';
+				this.genBtnText = 'Generating...';
 
 				this.$http.get('/appthis/generate-impressions', {params: {impressions: this.numImpressions}}).then(function() {
-					this.btnText = 'Generate';
+					this.genBtnText = 'Generate';
 					this.numImpressions = '';
 				});
 			} else {
-				this.btnText = "Enter Value!"
+				this.genBtnText = "Enter Value!"
+			}
+		},
+		runAlgorithm:        function() {
+			if (this.digits) {
+				this.algBtnText = 'Running...';
+
+				var params = {
+					digits: this.digits,
+					teams: this.numTeams || 2
+				};
+
+				this.$http.get('/appthis/algorithm', {params: params}).then(function(response) {
+					this.algBtnText = 'Run Algorithm';
+
+					response.json().then(function(json){
+						var msg = '';
+						for (var n in json.numbers) {
+							msg += json.numbers[n] + "\n";
+						}
+						msg += '= ' + json.total;
+
+						alert(msg);
+					});
+				});
+			} else {
+				this.algBtnText = "Add digits first!"
 			}
 		}
 	}
