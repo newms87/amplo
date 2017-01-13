@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//AppThis Routes
 Route::get('/appthis/report', 'AppThisController@report');
 Route::get('/appthis/publisher/stats', 'AppThisController@getPublisherStats');
 Route::get('/appthis/conversion/daily', 'AppThisController@getStatsByDay');
@@ -23,3 +24,7 @@ Route::get('/appthis/conversion/get-countries', 'AppThisController@getCountries'
 Route::get('/appthis/publisher/get', 'AppThisController@getPublishers');
 Route::get('/appthis/generate-impressions', 'AppThisController@generateImpressions');
 Route::get('/appthis/algorithm', 'AppThisController@runAlgorithm');
+
+
+//Coding Test URLs
+Route::get('/test/my-account', 'TestController@myAccount');
