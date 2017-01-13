@@ -66,21 +66,19 @@ class Appthis
 			$teams[$team_index++] .= $digit;
 
 			//Round robin loops until last team, then starts again at the first team (team 0)
-			if ($team_index >= count($teams)) {
+			if ($team_index >= $num_teams) {
 				$team_index = 0;
 			}
 		}
 
-		//Create the numbers from the teams
-		foreach ($teams as &$team) {
-			$team = (int)$team;
-		}
-		unset($team);
+		//Cast the string numbers to integers
+		$numbers = array_map('intval', $teams);
 
-		$total = array_sum($teams);
+		//Sum the total
+		$total = array_sum($numbers);
 
 		return [
-			'numbers' => $teams,
+			'numbers' => $numbers,
 			'total'   => $total
 		];
 	}
