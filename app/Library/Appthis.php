@@ -54,6 +54,9 @@ class Appthis
 
 	public function algorithmOptimized($digits = [], $num_teams = 2)
 	{
+		//Must be a positive non-zero integer
+		$num_teams = abs((int)$num_teams) ?: 2;
+
 		//Initialize teams
 		$teams = array_fill(0, $num_teams, '');
 
