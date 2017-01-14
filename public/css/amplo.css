@@ -2379,92 +2379,17 @@ h6 {
   color: #4A4848;
 }
 
-#my-account {
-  padding: 2em 1em;
+#my-profile {
   background: white;
 }
-#my-account h2 {
-  margin-bottom: 1em;
+#my-profile .logo {
+  max-width: 100%;
+  max-height: 100%;
+}
+#my-profile .logo img {
+  width: 100%;
+  max-width: 1935px;
+  max-height: 100%;
 }
 
-#progress-bar {
-  width: 500px;
-  overflow: hidden;
-  border-radius: 8px;
-  border: 1px solid black;
-  background: #EBEBEB;
-}
-#progress-bar .bar-header {
-  background: black;
-  color: white;
-  border-radius: 7px;
-  padding: .3em .5em;
-}
-#progress-bar .bar-header h1 {
-  font-size: 1.1em;
-}
-#progress-bar .bar-body {
-  color: #797979;
-  padding: 1em 1.5em;
-}
-#progress-bar .bar-body .bar-content {
-  background: white;
-  border-radius: 8px;
-  border: 1px solid black;
-  padding: 1em;
-}
-#progress-bar .bar-body .bar-content .bar-label {
-  font-weight: bold;
-  margin-right: .5em;
-}
-#progress-bar .bar-body .bar-content .bar-target {
-  background: #929292;
-  color: white;
-  font-weight: bold;
-  padding: .3em;
-  border: 1px solid black;
-}
-#progress-bar .bar-body .bar-content .bar-view {
-  background: #F8F8F8;
-  border: 1px solid #EFEAEA;
-  border-radius: 2px;
-  overflow: hidden;
-  width: 200px;
-  height: .9em;
-}
-#progress-bar .bar-body .bar-content .bar-view .bar-width {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: #68B35B;
-  border-radius: 2px;
-  width: 0;
-  height: 100%;
-  -webkit-transition: all 1s ease-out;
-  transition: all 1s ease-out;
-}
-#progress-bar .bar-body .bar-content .bar-helper {
-  position: absolute;
-  top: 1em;
-  left: 0;
-  text-indent: -50%;
-  color: black;
-  line-height: 0;
-  -webkit-transition: all 1s ease-out;
-  transition: all 1s ease-out;
-}
-#progress-bar .bar-body .bar-content .bar-helper .fa-chevron-up {
-  font-size: .8em;
-}
-#progress-bar .bar-body .bar-content .bar-helper .bar-progress-text {
-  font-weight: bold;
-}
-#progress-bar .bar-body .bar-info {
-  margin-top: 1.5em;
-}
-#progress-bar .bar-body .bar-info .info-icon {
-  color: #5885A1;
-  font-size: 1.1em;
-}
-
-/*# sourceMappingURL=my-account.css.map */
+/*# sourceMappingURL=amplo.css.map */

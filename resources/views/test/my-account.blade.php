@@ -7,20 +7,17 @@
         <div class="row account-page">
             <h2>Account Information:</h2>
 
-            <a class="btn show-progress" @click="showProgressBar">Progress</a>
+            <a class="btn show-progress" v-on:click="showProgressBar">Progress</a>
         </div>
 
-        <div id="progress-bar-modal" v-if="barVisible">
-            <div class="col-align"></div>
-            <div class="modal-content col">
-                <progress-bar :target="target" :progress="progress"></progress-bar>
-            </div>
-            <div class="overlay" @click="hideProgressBar"></div>
-    </div>
+        <modal v-if="barVisible" v-on:close="hideProgressBar">
+            <progress-bar :target="target" :progress="progress"></progress-bar>
+        </modal>
     </div>
 @endsection
 
 @section('scripts')
+    @include('components.modal')
     @include('test.progress-bar')
 
     <script>

@@ -15,6 +15,6 @@
 @section('scripts')
     @parent
 
-    @include('appthis.components.grid')
-    @include('appthis.components.chart')
+    @include('components.grid')
+    @include('components.chart')
 @endsection

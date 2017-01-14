@@ -11,30 +11,6 @@ $bar-transition: all 1s ease-out;
   }
 }
 
-#progress-bar-modal {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, .5);
-    z-index: 1;
-  }
-
-  .modal-content {
-    position: relative;
-    text-align: center;
-    z-index: 2;
-  }
-}
-
 #progress-bar {
   width: 500px;
   overflow: hidden;

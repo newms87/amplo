@@ -78,8 +78,7 @@
     </div>
 </div>
 
-<script type="text/javascript" src="https://unpkg.com/vue/dist/vue.js"></script>
-<script type="text/javascript" src="{{url('js/test.js')}}"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.8/{{App::environment('production') ? 'vue.min.js' : 'vue.js'}}"></script>
 
 @yield('scripts')
 

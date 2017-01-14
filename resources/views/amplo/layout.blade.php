@@ -5,42 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>@yield('title')</title>
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+    <title>@yield('page-title')</title>
 
     <!-- Styles -->
-    <link type="text/css" rel="stylesheet" href="{{url('css/appthis.css')}}"/>
+    <link type="text/css" rel="stylesheet" href="{{url('css/amplo.css')}}"/>
     @yield('stylesheets')
+    @yield('head')
 </head>
 
 <body>
 <div id="page-container" class="container-fluid page-report @yield('page-class')">
     <div class="page-wrap">
-        <nav id="primary-nav" class="row text-left nav-slide-inline slide-right">
-            <div class="nav-group nav-group-appthis">
-                <h3 class="nav-title">
-                    <i class="fa fa-user"></i>
-                    <span class="text">AppThis</span>
-                </h3>
-
-                <ul>
-                    <li class="link-stats">
-                        <a href="{{url('appthis/stats')}}">
-                            <i class="fa fa-chart"></i>
-                            <span class="text">Stats Analysis</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+        @include('amplo.navigation')
 
         <div class="page-content nav-content">
             <section id="page-header" class="page-header row">
                 <div class="wrap">
                     <div class="col xs-3 header-home text-left">
-                        <a class="inline-block btn-home header-btn" href="{{url('appthis/report')}}">
+                        <a class="inline-block btn-home header-btn" href="{{url('/')}}">
                             <i class="fa fa-home"></i>
                         </a>
                     </div>
@@ -64,15 +51,7 @@
             </section>
 
             <section id="page-sub-header" class="row page-sub-header">
-                <div class="gen-impressions col xs-12 md-4 xl-4 text-left">
-                    <input class="border-info" v-model="numImpressions" placeholder="# of Impressions"/>
-                    <button class="btn-sm bg-info color-default border-info" @click="generateImpressions()">@{{genBtnText}}</button>
-                </div>
-                <div class="algorithm col xs-12 md-8 xl-8 text-right">
-                    <input class="border-info" v-model="digits" placeholder="',' separated digits"/>
-                    <input class="border-info" v-model="numTeams" placeholder="# of numbers"/>
-                    <button class="btn-sm bg-info color-default border-info" @click="runAlgorithm()">@{{algBtnText}}</button>
-                </div>
+                @yield('page-sub-header')
             </section>
 
             <section class="page-body row">
@@ -90,16 +69,9 @@
     </div>
 </div>
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.8/{{App::environment('production') ? 'vue.min.js' : 'vue.js'}}"></script>
 <script src="https://cdn.jsdelivr.net/vue.resource/1.0.3/vue-resource.min.js"></script>
-
-<script type="text/javascript">
-	Vue.http.headers.common['X-CSRF-TOKEN'] = "{{$csrf_token = csrf_token()}}";
-</script>
-
-<script type="text/javascript" src="{{url('js/appthis.js')}}"></script>
+<!--<script type="text/javascript" src="{{url('js/amplo.js')}}"></script>-->
 
 @yield('scripts')
 
