@@ -19,7 +19,7 @@
     @yield('head')
 </head>
 
-<body>
+<body class="@yield('body-class')">
 <div id="page-container" class="container-fluid page-report @yield('page-class')">
     <div class="page-wrap">
         @include('amplo.navigation')
@@ -33,10 +33,7 @@
                         </a>
                     </div>
                     <div class="col xs-6 header-title">
-                        <div class="col-align ws-hack"></div>
-                        <div class="col auto">
-                            <h1>@yield('header-title')</h1>
-                        </div>
+                        @yield('header-title')
                     </div>
                     <div class="col xs-3 header-nav text-right">
                         <a class="navbar-toggle header-btn" href="#primary-nav">
@@ -63,6 +60,7 @@
 
             <section class="page-footer row">
                 <div class="wrap">
+                    @yield('page-footer')
                     <div class="copyright">&copy; {{date('Y')}} - Newman, LLC</div>
                 </div>
             </section>

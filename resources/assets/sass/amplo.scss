@@ -1,7 +1,15 @@
 @import 'include/amplo-theme';
+body.my-profile {
+  .page-body {
+    & > .wrap {
+      padding: 0;
+    }
+  }
+}
 
 #my-profile {
-  background: white;
+  background: no-repeat center/cover url("/img/min/everest-profile.jpg");
+  height: 100vh;
 
   .logo {
     max-width: 100%;
@@ -9,7 +17,6 @@
 
     img {
       width: 100%;
-      max-width: 1935px;
       max-height: 100%;
     }
   }

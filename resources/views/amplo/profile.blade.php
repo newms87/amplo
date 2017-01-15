@@ -1,12 +1,18 @@
 @extends('amplo.layout')
 @section('title', "AmploWeb")
-@section('header-title', "AmploWeb")
+@section('body-class', 'my-profile')
+
+@section('header-title')
+    <div class="col auto header-logo">
+        <img src="{{url('img/min/amploweb-logo@1x.png')}}" srcset="{{url('img/min/amploweb-logo@2x')}} 2x, {{url('img/min/amploweb-logo@3x')}} 3x"/>
+    </div>
+@endsection
 
 @section('page-body')
     <div id="my-profile">
         <div class="row profile-header">
             <div class="logo">
-                <img src="{{url('img/amploweb-logo.png')}}"/>
+
             </div>
         </div>
     </div>
